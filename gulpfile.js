@@ -170,7 +170,7 @@ gulp.task('copy', function(){
 });
 */
 
-// Image Resize Eample (ImageMagick)
+// Image Resize Example (ImageMagick)
 /*
 gulp.task('image-resize', function(){
 	return gulp.src(path.src.img)
