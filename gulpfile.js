@@ -63,8 +63,8 @@ gulp.task('clean', function(){
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./public/**/*')
-    .pipe(ghPages());
+	return gulp.src('./build/**/*')
+    	.pipe(ghPages());
 });
 
 //--| END OF 'Helper Tasks' |--//
