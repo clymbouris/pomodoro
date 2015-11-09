@@ -1,5 +1,5 @@
 ///////////////////////////////
-// 		 Configuration   	 //
+//       Configuration       //
 ///////////////////////////////
 
 var gulp = require('gulp');
@@ -41,7 +41,7 @@ var path = {
 
 
 ///////////////////////////////
-// 		Helper Tasks		 //
+//       Helper Tasks        //
 ///////////////////////////////
 
 // Default
@@ -62,6 +62,8 @@ gulp.task('clean', function(){
 	return del([path.build.js, path.build.css, 'build/*.html', path.build.img]);
 });
 
+// Deploy to gh-pages.
+// Prerequisites: Add origin remote repo & push once
 gulp.task('deploy', function() {
 	return gulp.src('./build/**/*')
     	.pipe(ghPages());
@@ -71,7 +73,7 @@ gulp.task('deploy', function() {
 
 
 ///////////////////////////////
-// 		Styles Workflow		 //
+//      Styles Workflow      //
 ///////////////////////////////
 
 gulp.task('styles', function(){
@@ -92,7 +94,7 @@ gulp.task('styles', function(){
 
 
 ///////////////////////////////
-// 		Scripts Workflow     //
+//      Scripts Workflow     //
 ///////////////////////////////
 
 gulp.task('scripts', ['jshint'], function(){
@@ -118,7 +120,7 @@ gulp.task('jshint', function(){
 
 
 ///////////////////////////////
-// 	     HTML Workflow		 //
+//       HTML Workflow       //
 ///////////////////////////////
 
 gulp.task('html', function(){
@@ -140,7 +142,7 @@ gulp.task('html', function(){
 
 
 ///////////////////////////////
-// 	    Images Workflow		 //
+//      Images Workflow      //
 ///////////////////////////////
 
 gulp.task('images', function(){
@@ -156,7 +158,7 @@ gulp.task('images', function(){
 
 
 ///////////////////////////////
-// 	 Unused Plugin Examples	 //
+//  Unused Plugin Examples   //
 ///////////////////////////////
 
 // Unoptimized Files - Just to have everything working on the build folder
