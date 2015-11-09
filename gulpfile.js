@@ -1,4 +1,3 @@
-
 ///////////////////////////////
 // 		 Configuration   	 //
 ///////////////////////////////
@@ -185,4 +184,3 @@ gulp.task('image-resize', function(){
 */
 
 //--| END OF 'Unused Plugin Examples' |--//
-
