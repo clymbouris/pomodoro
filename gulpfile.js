@@ -5,20 +5,20 @@
 var gulp = require('gulp');
 
 // Import Plugins
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var htmlmin = require('gulp-htmlmin');
-var del = require('del');
-var copy = require('gulp-copy');
-var rename = require('gulp-rename');
-var minifycss = require('gulp-cssmin');
-var uncss = require('gulp-uncss');
+var jshint       = require('gulp-jshint');
+var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
+var sourcemaps   = require('gulp-sourcemaps');
+var htmlmin      = require('gulp-htmlmin');
+var del          = require('del');
+var copy         = require('gulp-copy');
+var rename       = require('gulp-rename');
+var minifycss    = require('gulp-cssmin');
+var uncss        = require('gulp-uncss');
 var autoprefixer = require('gulp-autoprefixer');
-var imagemin = require('gulp-imagemin');
-var imageResize = require('gulp-image-resize');
-var ghPages = require('gulp-gh-pages');
+var imagemin     = require('gulp-imagemin');
+var imageResize  = require('gulp-image-resize');
+var ghPages      = require('gulp-gh-pages');
 
 // Source and Build path configuration
 var path = {
