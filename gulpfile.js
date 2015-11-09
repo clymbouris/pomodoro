@@ -20,20 +20,20 @@ var imagemin     = require('gulp-imagemin');
 var imageResize  = require('gulp-image-resize');
 var ghPages      = require('gulp-gh-pages');
 
-// Source and Build path configuration
+// Paths
 var path = {
 	build: {
-		js: 'build/js',
-		css: 'build/css',
+		js:   'build/js',
+		css:  'build/css',
 		html: 'build',
-		img: 'build/img'
+		img:  'build/img'
 	},
 	src: {
-		js: 'src/js/**/*',
+		js:   'src/js/**/*',
 		scss: 'src/scss/**/*',
-		css: 'src/css/**/*',
+		css:  'src/css/**/*',
 		html: 'src/*.html',
-		img: 'src/img/**/*'
+		img:  'src/img/**/*'
 	}
 };
 
