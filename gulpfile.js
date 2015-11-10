@@ -26,7 +26,8 @@ var path = {
 		js:   'build/js',
 		css:  'build/css',
 		html: 'build',
-		img:  'build/img'
+		img:  'build/img',
+		vendor: 'build/js/vendor'
 	},
 	src: {
 		js:   'src/js/**/*',
@@ -34,7 +35,14 @@ var path = {
 		css:  'src/css/**/*',
 		html: 'src/*.html',
 		img:  'src/img/**/*'
-	}
+	},
+	bower_base: 'src/components',
+	bower: [
+		// jQuery
+		'src/components/jquery/dist/jquery.min.js',
+		// Knockout
+        'src/components/knockout/dist/knockout.js',
+    ]
 };
 
 //--| END OF 'Configuration' |--//
@@ -114,6 +122,12 @@ gulp.task('jshint', function(){
 		.pipe(jshint.reporter('jshint-stylish'))
 		// Only run dependent tasks if linting is success
 		.pipe(jshint.reporter('fail'));
+});
+
+// One-time task to copy vendor scripts from bower to build
+gulp.task('vendor-scripts', function() {
+    return gulp.src(path.bower, {base: path.bower_base})
+    	.pipe(gulp.dest(path.build.vendor));
 });
 
 //--| END OF 'Scripts Workflow' |--//
