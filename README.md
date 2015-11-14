@@ -9,3 +9,5 @@
 - Use inline to add critical CSS on head
 - Use gzip to compress resources
 - Use browsersync
+- Add .publish/ to .gitignore
+- Remove default remote origin
