@@ -1,11 +1,23 @@
-#Knockout Template
+#Knockout Workflow
+[knockout-workflow](https://github.com/d3moid/knockout-template) is a workflow template for quickly setting started with projects based on [Knockout.js](https://github.com/knockout/knockout) and [jQuery](https://github.com/jquery/jquery).
 
+#Quickstart
 ##Install
-1. Use 'npm install' to install node modules from package.json.
-2. Use 'bower install' to install vendor libraries to 'source'.
-3. Use 'gulp vendor-scripts' for one-time copy of minified files to 'build'.
-
+The gulp-plugins are not included in the repo and need to be installed from `package.json` after cloning.
+```
+git clone git@github.com:d3moid/knockout-workflow.git
+cd knockout-workflow
+npm install
+```
 ##Usage
+
+
+##Folder structure
+
+##Tools
+###gulp
+###bower
+##TODO
 - Add flags/arguments to image-resize task
 - Use critical to identify above the fold CSS
 - Use inline to add critical CSS on head
@@ -13,11 +25,4 @@
 - Use browsersync
 - Add .publish/ to .gitignore
 - Remove default remote origin
-
-##Folder structure
-
-##Tools
-###gulp
-###bower
-
 ##License
