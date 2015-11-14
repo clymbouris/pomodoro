@@ -37,7 +37,7 @@ knockout-workflow
 #Tools
 ##gulp
 Gulp is a task/build runner for development. The following plugins are used for optimization:
-**JShint**, **uglify**, **concat**,**sourcemaps**, **htmlmin**, **minify-css**, **uncss**, **autoprefixer**, **imagemin**, **image-resize**, **gulp-deploy**
+**JShint**, **uglify**, **concat**, **sourcemaps**, **htmlmin**, **minify-css**, **uncss**, **autoprefixer**, **imagemin**, **image-resize**, **gulp-deploy**
 
 ##bower
 Bower is a package manager optimized for the front-end. No initial configuration required; the additional libraries are already included in the `/build` directory. You can delete the `/build` directory using `gulp clean` if required. If you do so you have to copy the components to build using the `vendor-scripts` task:
@@ -55,5 +55,4 @@ Libraries included:
 - Use inline to add critical CSS on head
 - Use gzip to compress resources
 - Use browsersync
-
-#License
+- Use cache and changed plugins so as to not reoptimize resources
