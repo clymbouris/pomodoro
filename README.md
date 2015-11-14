@@ -10,10 +10,28 @@ cd knockout-workflow
 npm install
 ```
 ##Usage
+To use run 'gulp' from the project's root folder.
+```
+gulp
+```
 
-
-##Folder structure
-
+All changes should be done on resources under `/src`. The optimized resources are automatically outputted to `/build`. Project folder structure shown below.
+```
+knockout-workflow
+|- src
+  |- components
+    |- ...
+  |- css
+  |- img
+  |- js
+  |- scss
+|- build
+  |- components
+    |- ...
+  |- css
+  |- img
+  |- js
+```
 ##Tools
 ###gulp
 ###bower
