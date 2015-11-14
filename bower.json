@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "knockout": "~3.3.0"
+    "knockout": "~3.3.0",
+    "normalize-css": "normalize.css#~3.0.3"
   }
 }

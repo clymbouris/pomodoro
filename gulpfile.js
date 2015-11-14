@@ -27,7 +27,7 @@ var path = {
 		css:  'build/css',
 		html: 'build',
 		img:  'build/img',
-		vendor: 'build/js/vendor'
+		vendor: 'build/components'
 	},
 	src: {
 		js:   'src/js/**/*',
@@ -42,6 +42,7 @@ var path = {
 		'src/components/jquery/dist/jquery.min.js',
 		// Knockout
         'src/components/knockout/dist/knockout.js',
+        'src/components/normalize-css/normalize.css'
     ]
 };
 
@@ -75,6 +76,12 @@ gulp.task('clean', function(){
 gulp.task('deploy', function() {
 	return gulp.src('./build/**/*')
     	.pipe(ghPages());
+});
+
+// One-time task to copy vendor scripts from bower to build
+gulp.task('vendor-scripts', function() {
+    return gulp.src(path.bower, {base: path.bower_base})
+    	.pipe(gulp.dest(path.build.vendor));
 });
 
 //--| END OF 'Helper Tasks' |--//
@@ -124,13 +131,7 @@ gulp.task('jshint', function(){
 		.pipe(jshint.reporter('fail'));
 });
 
-// One-time task to copy vendor scripts from bower to build
-gulp.task('vendor-scripts', function() {
-    return gulp.src(path.bower, {base: path.bower_base})
-    	.pipe(gulp.dest(path.build.vendor));
-});
-
-//--| END OF 'Scripts Workflow' |--//
+//--| END OF 'Scripts Workflow' |--// 
 
 
 ///////////////////////////////
