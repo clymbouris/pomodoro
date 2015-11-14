@@ -34,7 +34,25 @@ knockout-workflow
 ```
 ##Tools
 ###gulp
+Gulp is a task/build runner for development. It allows you to do a lot of stuff within your development workflow. The following plugins are used for this workflow:
+- **JShint**: Checks code for syntax errors. Uses jshint-reporter for formatting console output.
+- **uglify**: JavaScript file minification.
+- **concat**: Concatenate `.css` and `.js` files.
+- **sourcemaps**: Allows debugging from within browser console after resources are minized/concatenated.
+- **htmlmin**: Minify `.html` files (whitespaces, comments, etc.).
+- **minify-css**: Minify `.css` files.
+- **uncss**: Remove unused rules from `.css` files.
+- **autoprefixer**: Auto-append vendor prefixes.
+- **imagemin**: Optimize images.
+- **image-resize**: Resize images.
+- **gulp-deploy**: Quickly sync gh-pages branch using `gulp deploy` task.
+
 ###bower
+Bower is a package maanger optimized for the front-end. Bower uses a flat dependency tree, requiring only one version for each package, reducing page load to a minimum. The components are already included in the `/build` directory. If the `/build` directory is deleted you can copy the components to build using like so:
+```
+gulp vendor-scripts
+```
+
 ##TODO
 - Add flags/arguments to image-resize task
 - Use critical to identify above the fold CSS
@@ -43,4 +61,5 @@ knockout-workflow
 - Use browsersync
 - Add .publish/ to .gitignore
 - Remove default remote origin
+
 ##License
