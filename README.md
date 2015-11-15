@@ -3,11 +3,22 @@ A [gulp](https://github.com/gulpjs/gulp)-based optimized workflow template for n
 
 #Quickstart
 ##Install
+**SSH**
 ```
 git clone git@github.com:d3moid/knockout-workflow.git
-cd knockout-workflow
+
 ```
-Install gulp and plugins locally using `package.json`.
+**HTTPS**
+```
+git clone https://github.com/d3moid/knockout-workflow.git
+
+```
+Rename project directory and go to directory root. Replace _my_project_name_ with a name of your choosing.
+```
+mv knockout-workflow my_project_name
+cd my_project_name
+```
+Node modules are not included in the repo. Instead they're referenced inside `package.json`. You can download and install gulp and plugins locally to your project using npm.
 ```
 npm install
 ```
