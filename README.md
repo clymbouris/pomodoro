@@ -56,3 +56,6 @@ Libraries included:
 - Use gzip to compress resources
 - Use browsersync
 - Use cache and changed plugins so as to not reoptimize resources
+
+#License
+MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
