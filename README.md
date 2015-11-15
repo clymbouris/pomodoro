@@ -6,12 +6,10 @@ A [gulp](https://github.com/gulpjs/gulp) workflow template for creating optimize
 **SSH**
 ```
 $ git clone git@github.com:d3moid/knockout-workflow.git
-
 ```
 **HTTPS**
 ```
 $ git clone https://github.com/d3moid/knockout-workflow.git
-
 ```
 Rename project directory and go to directory root.
 ```sh
