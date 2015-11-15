@@ -25,28 +25,40 @@ Gulp depends on [Node.js](www.nodejs.org). Dependencies  referenced in [package.
 
 $ npm install
 ```
-##Usage
-All optimizations are bound as watched tasks on the default task. To start type
+##Use
+Start your project by running the default task. 
 ```
-gulp
+$ gulp
 ```
 
-All changes happen within `/src`. The optimized resources are automatically sent to `/build`. 
+Start working on these files inside `/src` directory
+- `index.html`
+- `css/main.css`
+- `js/main.css`. 
+
+JavaScript and CSS files created inside `js/` and `css/` will be concatenated and optimized as well. All optimized files will be copied to the `/build` directory.
 ```
-knockout-workflow
+project_name development
 |- src
+  index.html
   |- components
     |- ...
   |- css
+    main.css
   |- img
   |- js
+    app.js
   |- scss
+project_name production code
 |- build
+  index.html
   |- components
     |- ...
   |- css
+    main.min.css
   |- img
   |- js
+    main.min.js
 ```
 #Optimizations
 Add something here.
