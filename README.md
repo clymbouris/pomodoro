@@ -1,4 +1,4 @@
-#Knockout Workflow
+#What is it?
 A [gulp](https://github.com/gulpjs/gulp) workflow template for creating optimized front-end projects based on [knockout](https://github.com/knockout/knockout) and [jQuery](https://github.com/jquery/jquery). 
 
 #Quickstart
