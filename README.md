@@ -34,7 +34,7 @@ $ gulp
 Start working on these files inside `/src` directory
 - **HTML**: `src/index.html`
 - **CSS**: `src/css/main.css`
-- **JS**: `src/js/main.css`. 
+- **JS**: `src/js/app.js` 
 
 Additional JavaScript and CSS files created inside `src/js` and `src/css` directories will be concatenated and optimized as well. All optimized files will be copied to the `/build` directory (see diagram below).
 ```
