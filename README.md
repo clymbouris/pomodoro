@@ -19,9 +19,9 @@ $ mv knockout-workflow my_project_name
 $ cd my_project_name
 ```
 ##Install packages
-Gulp depends on [Node.js](www.nodejs.org). [Dependencies](https://github.com/d3moid/knockout-workflow/blob/master/package.json) can be installed using [npm](www.npmjs.org).
+Gulp depends on [Node.js](www.nodejs.org). Dependencies [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json) can be installed using [npm](www.npmjs.org).
 ```sh
-# Have npm read my_project_name/package.json and download required dependencies
+# Download required dependencies from my_project_name/package.json
 
 $ npm install
 ```
