@@ -13,15 +13,15 @@ $ git clone https://github.com/d3moid/knockout-workflow.git
 ```
 Rename project directory and browse to it.
 ```sh
-# Replace my_project_name with the name of your project
+# Replace my_project with the name of your project
 
-$ mv knockout-workflow my_project_name
-$ cd my_project_name
+$ mv knockout-workflow my_project
+$ cd my_project
 ```
 ##Install packages
 Gulp depends on [Node.js](www.nodejs.org). Dependencies  referenced in [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json) can be installed using [npm](www.npmjs.org).
 ```sh
-# Download required dependencies from my_project_name/package.json
+# Download required dependencies from my_project/package.json
 
 $ npm install
 ```
@@ -36,9 +36,9 @@ Start working on these files inside `/src` directory
 - `css/main.css`
 - `js/main.css`. 
 
-JavaScript and CSS files created inside `js/` and `css/` will be concatenated and optimized as well. All optimized files will be copied to the `/build` directory.
+Additional JavaScript and CSS files created inside `js/` and `css/` respectively will be concatenated and optimized as well. All optimized files will be copied to the `/build` directory.
 ```
-project_name development
+my_project
 |- src
   index.html
   |- components
@@ -49,7 +49,6 @@ project_name development
   |- js
     app.js
   |- scss
-project_name production code
 |- build
   index.html
   |- components
