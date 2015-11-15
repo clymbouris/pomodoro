@@ -13,8 +13,10 @@ $ git clone git@github.com:d3moid/knockout-workflow.git
 $ git clone https://github.com/d3moid/knockout-workflow.git
 
 ```
-Rename project directory and go to directory root. Replace _my_project_name_ with the name of your project.
-```
+Rename project directory and go to directory root.
+```sh
+# Replace _my_project_name_ with the name of your project
+
 $ mv knockout-workflow my_project_name
 $ cd my_project_name
 ```
