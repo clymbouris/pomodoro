@@ -1,8 +1,8 @@
 #Knockout Workflow
-A [gulp](https://github.com/gulpjs/gulp)-based optimized workflow template for new [knockout](https://github.com/knockout/knockout)/[jQuery](https://github.com/jquery/jquery) front-end projects. 
+A [gulp](https://github.com/gulpjs/gulp)-based optimized workflow template for creating new front-end projects based on [knockout](https://github.com/knockout/knockout) and [jQuery](https://github.com/jquery/jquery). 
 
 #Quickstart
-##Install
+##Clone
 **SSH**
 ```
 git clone git@github.com:d3moid/knockout-workflow.git
@@ -13,12 +13,13 @@ git clone git@github.com:d3moid/knockout-workflow.git
 git clone https://github.com/d3moid/knockout-workflow.git
 
 ```
+##Configuration
 Rename project directory and go to directory root. Replace _my_project_name_ with a name of your choosing.
 ```
 mv knockout-workflow my_project_name
 cd my_project_name
 ```
-Node modules are not included in the repo. Instead they're referenced inside [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json). You can download and install gulp and plugins locally to your project using npm.
+Node modules are not included in the repo. Instead they're referenced inside [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json). You must download and install the modules locally to your project using npm.
 ```
 npm install
 ```
