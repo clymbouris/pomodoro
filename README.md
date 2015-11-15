@@ -1,27 +1,29 @@
 #Knockout Workflow
-A [gulp](https://github.com/gulpjs/gulp)-based optimized workflow template for creating new front-end projects based on [knockout](https://github.com/knockout/knockout) and [jQuery](https://github.com/jquery/jquery). 
+A [gulp](https://github.com/gulpjs/gulp) workflow template for creating optimized front-end projects based on [knockout](https://github.com/knockout/knockout) and [jQuery](https://github.com/jquery/jquery). 
 
 #Quickstart
 ##Clone
 **SSH**
 ```
-git clone git@github.com:d3moid/knockout-workflow.git
+$ git clone git@github.com:d3moid/knockout-workflow.git
 
 ```
 **HTTPS**
 ```
-git clone https://github.com/d3moid/knockout-workflow.git
+$ git clone https://github.com/d3moid/knockout-workflow.git
 
 ```
-##Configuration
-Rename project directory and go to directory root. Replace _my_project_name_ with a name of your choosing.
+Rename project directory and go to directory root. Replace _my_project_name_ with the name of your project.
 ```
-mv knockout-workflow my_project_name
-cd my_project_name
+$ mv knockout-workflow my_project_name
+$ cd my_project_name
 ```
-Node modules are not included in the repo. Instead they're referenced inside [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json). You must download and install the modules locally to your project using npm.
-```
-npm install
+##Install packages
+Gulp depends on [Node.js](www.nodejs.org). [Dependencies](https://github.com/d3moid/knockout-workflow/blob/master/package.json) can be installed using [npm](www.npmjs.org).
+```sh
+# Have npm read my_project_name/package.json and download required dependencies
+
+$ npm install
 ```
 ##Usage
 All optimizations are bound as watched tasks on the default task. To start type
@@ -46,6 +48,9 @@ knockout-workflow
   |- img
   |- js
 ```
+#Optimizations
+Add something here.
+
 #Tools
 ##gulp
 [Gulp](https://github.com/gulpjs/gulp) is a task/build runner for development. 
@@ -61,7 +66,6 @@ If you delete the `/build` directory manually you can copy the components again 
 ```
 gulp vendor-scripts
 ```
-
 Libraries included in template:
 - knockout.js
 - jQuery
