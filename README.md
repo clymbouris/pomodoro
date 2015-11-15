@@ -18,7 +18,7 @@ Rename project directory and go to directory root. Replace _my_project_name_ wit
 mv knockout-workflow my_project_name
 cd my_project_name
 ```
-Node modules are not included in the repo. Instead they're referenced inside `package.json`. You can download and install gulp and plugins locally to your project using npm.
+Node modules are not included in the repo. Instead they're referenced inside [package.json](https://github.com/d3moid/knockout-workflow/blob/master/package.json). You can download and install gulp and plugins locally to your project using npm.
 ```
 npm install
 ```
@@ -47,15 +47,21 @@ knockout-workflow
 ```
 #Tools
 ##gulp
-Gulp is a task/build runner for development. The following plugins are used for optimization:
-**JShint**, **uglify**, **concat**, **sourcemaps**, **htmlmin**, **minify-css**, **uncss**, **autoprefixer**, **imagemin**, **image-resize**, **gulp-deploy**
+[Gulp](https://github.com/gulpjs/gulp) is a task/build runner for development. 
 
 ##bower
-Bower is a package manager optimized for the front-end. No initial configuration required; the additional libraries are already included in the `/build` directory. You can delete the `/build` directory using `gulp clean` if required. If you do so you have to copy the components to build using the `vendor-scripts` task:
+[Bower](https://github.com/bower/bower) is a package manager optimized for the front-end. 
+
+No initial configuration is required. The repo includes all required libraries both in the `/src` and `/build` directory. You can safely clean the `/build` directory without deleting these libraries using the `clean` task. 
+```
+gulp clean
+```
+If you delete the `/build` directory manually you can copy the components again by calling the `vendor-scripts` task.
 ```
 gulp vendor-scripts
 ```
-Libraries included:
+
+Libraries included in template:
 - knockout.js
 - jQuery
 - normalize.css
