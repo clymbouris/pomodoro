@@ -89,6 +89,7 @@ Libraries included in template:
 - Use gzip to compress resources
 - Use browsersync
 - Use cache and changed plugins so as to not reoptimize resources
+- Activate knockout from within index.html (bottom script block)
 
 #License
 MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
