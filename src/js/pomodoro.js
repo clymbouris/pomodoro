@@ -1,20 +1,24 @@
  // duration: seconds
 function Pomodoro(duration) {
+	var self = this;
 	this.length = duration || 25 * 60;
 	this.timer = ko.observable(this.length);
 	this.isRunning = false;
 	this.isPaused = true;
+	this.minutes = ko.computed(function() {
+		var minutes = parseInt(self.timer() / 60, 10);
+		return (minutes < 10) ? '0' + minutes : minutes;
+	});
+	this.seconds = ko.computed(function() {
+		var seconds = parseInt(self.timer() % 60, 10);
+		return (seconds < 10) ? '0' + seconds : seconds;
+	});
 }
 
 Pomodoro.prototype.clock = function() {
-	var minutes = parseInt(this.timer() / 60, 10);
-	var seconds = parseInt(this.timer() % 60, 10);
-	minutes = (minutes < 10) ? '0' + minutes : minutes;
-	seconds = (seconds < 10) ? '0' + seconds : seconds;
 	if(!this.isPaused) {
 		this.timer(this.timer() - 1);
-		console.log(minutes, seconds);
-		if ( this.timer() === 0) {
+		if (this.timer() < 0) {
 			this.ringTimer();
 			this.resetTimer();
 		}

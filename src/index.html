@@ -11,7 +11,14 @@
 </head>
 <body>
 
-<h1><span data-bind="text: timer"></span></h1>
+<div class="container">
+	<div class="row">
+		<div id="tomato">
+			<span data-bind="text: minutes"></span>:<span data-bind="text: seconds"></span>
+		</div>
+	</div>
+</div>
+
 <script src="components/jquery/dist/jquery.min.js"></script>
 <script src="components/knockout/dist/knockout.js"></script>
 <script src="js/main.min.js"></script>

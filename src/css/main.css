@@ -1,1 +1,18 @@
- 
+.container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#tomato {
+	display: flex;
+	width: 25vw;
+	height: 25vw;
+	background-color: tomato;
+	border-radius: 50%;
+	line-height:25vw;
+	justify-content: center;
+	font-size: 7vw;
+	color: white;
+}
