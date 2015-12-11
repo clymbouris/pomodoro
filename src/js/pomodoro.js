@@ -1,19 +1,20 @@
  // duration: seconds
 function Pomodoro(duration) {
 	this.length = duration || 25 * 60;
-	this.timer = this.length;
+	this.timer = ko.observable(this.length);
 	this.isRunning = false;
 	this.isPaused = true;
 }
 
 Pomodoro.prototype.clock = function() {
-	var minutes = parseInt(this.timer / 60, 10);
-	var seconds = parseInt(this.timer % 60, 10);
+	var minutes = parseInt(this.timer() / 60, 10);
+	var seconds = parseInt(this.timer() % 60, 10);
 	minutes = (minutes < 10) ? '0' + minutes : minutes;
 	seconds = (seconds < 10) ? '0' + seconds : seconds;
 	if(!this.isPaused) {
+		this.timer(this.timer() - 1);
 		console.log(minutes, seconds);
-		if (--this.timer < 0) {
+		if ( this.timer() === 0) {
 			this.ringTimer();
 			this.resetTimer();
 		}
@@ -46,8 +47,8 @@ Pomodoro.prototype.ringTimer = function() {
 };
 
 Pomodoro.prototype.setTimer = function(duration) {
-	this.length = duration || 25 * 60;
-	this.timer = this.length;
+	this.timer(duration);
 };
 
 var p = new Pomodoro(5);
+ko.applyBindings(p);
