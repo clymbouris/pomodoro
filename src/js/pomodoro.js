@@ -1,21 +1,32 @@
  // duration: seconds
 function Pomodoro(duration) {
 	var self = this;
-	this.duration = duration;
-	this.length = this.duration || 25 * 60;
-	this.timer = ko.observable(this.length);
-	this.isRunning = false;
-	this.isPaused = true;
-	this.minutes = ko.computed(function() {
-		var minutes = parseInt(self.timer() / 60, 10);
-		return (minutes < 10) ? '0' + minutes : minutes;
+	// Time duration as set by User
+	self.duration = (duration) ? ko.observable(duration) : ko.observable(25 * 60);
+	// Time remaining in seconds
+	self.remaining = self.duration();
+	// Running Timer
+	self.timer = ko.observable(self.remaining);
+	// Pause status and view
+	self.isPaused = ko.observable(true);
+	self.pauseView = ko.computed(function() {
+		return (self.isPaused()) ? 'paused' : '';
 	});
-	this.seconds = ko.computed(function() {
+	// Minutes View
+	self.minutesView = ko.computed(function() {
+		var minutes = parseInt(self.timer() / 60, 10);
+		return minutes;
+	});
+	// Seconds View
+	self.secondsView = ko.computed(function() {
 		var seconds = parseInt(self.timer() % 60, 10);
 		return (seconds < 10) ? '0' + seconds : seconds;
 	});
-	this.elapsed = 0;
-	this.bell = new Audio('audio/bell.mp3');
+	// To keep clock function accurate
+	self.elapsed = 0;
+	// SoundFX
+	self.bell = new Audio('audio/bell.mp3');
+	self.tick = new Audio('audio/tick.mp3');
 }
 
 Pomodoro.prototype.clock = function() {
@@ -24,10 +35,13 @@ Pomodoro.prototype.clock = function() {
 	if(Math.round(this.elapsed) === this.elapsed) {
 		this.elapsed++;
 	}
-	this.timer(this.length - this.elapsed);
-	if(this.timer() === 0) {
+	this.timer(this.remaining - this.elapsed);
+	if(this.timer() < 0) {
 		this.resetTimer();
-		this.bell.play();
+		this.ringTimer();
+	}
+	if(this.timer() < 10) {
+		this.tick.play();
 	}
 };
 
@@ -42,27 +56,37 @@ Pomodoro.prototype.startTimer = function() {
 
 Pomodoro.prototype.resetTimer = function() {
 	clearInterval(this.interval);
-	this.isPaused = true;
-	this.length = this.duration;
-	this.setTimer(this.length);
-};
-
-Pomodoro.prototype.pausePlay = function() {
-	this.isPaused = !this.isPaused;
-	if (!this.isPaused) {
-		this.startTimer();
-	}
-	else {
-		// save progress
-		this.length = this.timer();
-		clearInterval(this.interval);
-	}
+	this.isPaused(true);
+	this.setTimer(this.duration());
 };
 
 Pomodoro.prototype.ringTimer = function() {
 	console.log('Ring, ring!');
+	this.bell.play();
 };
 
 Pomodoro.prototype.setTimer = function(duration) {
-	this.timer(duration);
+	this.remaining = duration;
+	this.timer(this.remaining);
+};
+
+Pomodoro.prototype.pausePlay = function() {
+	clearInterval(this.interval);
+	this.isPaused(!this.isPaused());
+	if (!this.isPaused()) this.startTimer(); 
+	else this.remaining = this.timer();
+};
+
+Pomodoro.prototype.adjustDuration = function(seconds) {
+	if (!this.isPaused()) this.pausePlay();
+	if (seconds > 0 && this.duration() + seconds >= 3600) {
+		this.duration(3600);
+	}
+	else if (seconds < 0 && this.duration() + seconds < 1) {
+		this.duration(this.timer());
+	}
+	else {
+		this.duration(this.duration() + seconds);
+	}
+	this.setTimer(this.duration());
 };

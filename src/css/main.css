@@ -1,6 +1,10 @@
 body {
 	background-color: #4F5050;
 }
+
+div {
+	display: block;
+}
 .container {
 	height: 100%;
 	display: flex;
@@ -9,14 +13,59 @@ body {
 }
 
 #tomato {
+	border: 0;
+	boredr-style: none;
 	display: flex;
-	width: 90vw;
-	height: 90vw;
+	flex-direction: column;
+	width: 350px;
+	height: 350px;
 	background-color: tomato;
 	border-radius: 50%;
-	line-height: 90vw;
 	justify-content: center;
-	font-size: 7em;
+	font-size: 12em;
 	color: white;
-	margin-top: 20vh;
+	margin-top: 50px;
+	align-items: center;
+}
+
+#seconds {
+	font-size: 30px;
+}
+
+#minutes {
+	display: flex;
+	align-items: center;
+	font-size: 4em;
+	color: white;
+}
+
+#signs {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.sign {
+	border: 0;
+	margin: 16px;
+	display: flex;
+	background-color: white;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	font-size: 48px;
+	color: #4F5050;
+	justify-content: center;
+	line-height: 32px;
+}
+
+#isPaused {
+	font-size: 4em;
+	color: gray;
+	display: flex;
+	width: 350px;
+	justify-content: center;
+
+	margin-top: 50px;
+	letter-spacing: 5px;
 }
