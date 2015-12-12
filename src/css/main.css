@@ -1,3 +1,6 @@
+body {
+	background-color: #4F5050;
+}
 .container {
 	height: 100%;
 	display: flex;
@@ -7,12 +10,13 @@
 
 #tomato {
 	display: flex;
-	width: 25vw;
-	height: 25vw;
+	width: 90vw;
+	height: 90vw;
 	background-color: tomato;
 	border-radius: 50%;
-	line-height:25vw;
+	line-height: 90vw;
 	justify-content: center;
-	font-size: 7vw;
+	font-size: 7em;
 	color: white;
+	margin-top: 20vh;
 }

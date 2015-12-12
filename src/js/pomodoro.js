@@ -1,7 +1,8 @@
  // duration: seconds
 function Pomodoro(duration) {
 	var self = this;
-	this.length = duration || 25 * 60;
+	this.duration = duration;
+	this.length = this.duration || 25 * 60;
 	this.timer = ko.observable(this.length);
 	this.isRunning = false;
 	this.isPaused = true;
@@ -13,37 +14,49 @@ function Pomodoro(duration) {
 		var seconds = parseInt(self.timer() % 60, 10);
 		return (seconds < 10) ? '0' + seconds : seconds;
 	});
+	this.elapsed = 0;
+	this.bell = new Audio('audio/bell.mp3');
 }
 
 Pomodoro.prototype.clock = function() {
-	if(!this.isPaused) {
-		this.timer(this.timer() - 1);
-		if (this.timer() < 0) {
-			this.ringTimer();
-			this.resetTimer();
-		}
+	var time = new Date().getTime() - this.start;
+	this.elapsed = Math.floor(time / 100 / 10);
+	if(Math.round(this.elapsed) === this.elapsed) {
+		this.elapsed++;
+	}
+	this.timer(this.length - this.elapsed);
+	if(this.timer() === 0) {
+		this.resetTimer();
+		this.bell.play();
 	}
 };
 
 Pomodoro.prototype.startTimer = function() {
-	this.isRunning = true;
-	this.isPaused = false;
 	// if this is not set then calling the setInterval function with this.clock will set 'this' to global
 	var me = this;
+	this.start = new Date().getTime();
 	this.interval = setInterval(function() {
 		me.clock();
-	}, 1000);
+	}, 100);
 };
 
 Pomodoro.prototype.resetTimer = function() {
-	this.isPaused = true;
 	clearInterval(this.interval);
-	this.isRunning = false;
+	this.isPaused = true;
+	this.length = this.duration;
 	this.setTimer(this.length);
 };
 
-Pomodoro.prototype.pauseTimer = function() {
+Pomodoro.prototype.pausePlay = function() {
 	this.isPaused = !this.isPaused;
+	if (!this.isPaused) {
+		this.startTimer();
+	}
+	else {
+		// save progress
+		this.length = this.timer();
+		clearInterval(this.interval);
+	}
 };
 
 Pomodoro.prototype.ringTimer = function() {
@@ -53,6 +66,3 @@ Pomodoro.prototype.ringTimer = function() {
 Pomodoro.prototype.setTimer = function(duration) {
 	this.timer(duration);
 };
-
-var p = new Pomodoro(5);
-ko.applyBindings(p);
