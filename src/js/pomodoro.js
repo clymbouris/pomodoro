@@ -27,6 +27,9 @@ function Pomodoro(duration) {
 	// SoundFX
 	self.bell = new Audio('audio/bell.mp3');
 	self.tick = new Audio('audio/tick.mp3');
+	self.tock = new Audio('audio/tock.wav');
+	self.crank = new Audio('audio/crank.mp3');
+	self.tickStart = new Audio('audio/start.mp3');
 }
 
 Pomodoro.prototype.clock = function() {
@@ -47,6 +50,7 @@ Pomodoro.prototype.clock = function() {
 
 Pomodoro.prototype.startTimer = function() {
 	// if this is not set then calling the setInterval function with this.clock will set 'this' to global
+	this.tick.play();
 	var me = this;
 	this.start = new Date().getTime();
 	this.interval = setInterval(function() {
@@ -56,6 +60,7 @@ Pomodoro.prototype.startTimer = function() {
 
 Pomodoro.prototype.resetTimer = function() {
 	clearInterval(this.interval);
+	this.crank.play();
 	this.isPaused(true);
 	this.setTimer(this.duration());
 };
@@ -71,6 +76,7 @@ Pomodoro.prototype.setTimer = function(duration) {
 };
 
 Pomodoro.prototype.pausePlay = function() {
+		this.tick.play();
 	clearInterval(this.interval);
 	this.isPaused(!this.isPaused());
 	if (!this.isPaused()) this.startTimer(); 
@@ -79,6 +85,7 @@ Pomodoro.prototype.pausePlay = function() {
 
 Pomodoro.prototype.adjustDuration = function(seconds) {
 	if (!this.isPaused()) this.pausePlay();
+	this.tock.play();
 	if (seconds > 0 && this.duration() + seconds >= 3600) {
 		this.duration(3600);
 	}
