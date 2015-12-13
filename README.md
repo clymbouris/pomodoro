@@ -17,6 +17,7 @@ User Story: I can reset the clock for my next pomodoro.
 User Story: I can customize the length of each pomodoro.
 
 ##Todo
+- Display live timer in broswer tab title
 
 ##License
 MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
