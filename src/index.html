@@ -17,14 +17,13 @@
 			<button class="sign" data-bind="click: resetTimer">r</button>
 			<button class="sign" data-bind="click: function () { adjustDuration(-60) }">-</button>
 		</div>
-
 		<button id="tomato" data-bind="style: { border: isPaused() ? 'tomato solid thick' : '#42D823 solid thick' }">
-			<div><span data-bind="text: minutesView"></span></div>	
+			<div><span data-bind="text: minutes"></span></div>	
 		</button>
 		<div class="seconds" data-bind="visible: !isPaused()">
 			<div class="seconds-label">pom</div>
 			<div id="seconds">
-				<span data-bind="text: secondsView, style: { color: isPaused() ? 'tomato' : 'white' }"></span>
+				<span data-bind="text: seconds, style: { color: isPaused() ? 'tomato' : 'white' }"></span>
 			</div>
 			<div class="seconds-label">doro</div>
 		</div>

@@ -1,29 +1,31 @@
  // duration: seconds
 function Pomodoro(duration) {
 	var self = this;
-	// Time duration as set by User
+	// Time duration as set by User. We store this to have it available on reset. Default 25 mins.
 	self.duration = (duration) ? ko.observable(duration) : ko.observable(25 * 60);
 	// Time remaining in seconds
 	self.remaining = self.duration();
 	// Running Timer
 	self.timer = ko.observable(self.remaining);
+	// To keep clock function accurate
+	self.elapsed = 0;
+
 	// Pause status and view
 	self.isPaused = ko.observable(true);
 	self.pauseView = ko.computed(function() {
 		return (self.isPaused()) ? 'paused' : '';
 	});
+
 	// Minutes View
-	self.minutesView = ko.computed(function() {
-		var minutes = parseInt(self.timer() / 60, 10);
-		return minutes;
+	self.minutes = ko.computed(function() {
+		return parseInt(self.timer() / 60, 10);
 	});
 	// Seconds View
-	self.secondsView = ko.computed(function() {
-		var seconds = parseInt(self.timer() % 60, 10);
-		return (seconds < 10) ? '0' + seconds : seconds;
+	self.seconds = ko.computed(function() {
+		var s = parseInt(self.timer() % 60, 10);
+		return (s < 10) ? '0' + s : s;
 	});
-	// To keep clock function accurate
-	self.elapsed = 0;
+	
 	// SoundFX
 	self.bell = new Audio('audio/bell.mp3');
 	self.tick = new Audio('audio/tick.mp3');
@@ -43,9 +45,7 @@ Pomodoro.prototype.clock = function() {
 		this.resetTimer();
 		this.ringTimer();
 	}
-	if(this.timer() < 10) {
-		this.tick.play();
-	}
+	document.title = this.minutes() + ':' + this.seconds();
 };
 
 Pomodoro.prototype.startTimer = function() {
@@ -67,7 +67,7 @@ Pomodoro.prototype.resetTimer = function() {
 
 Pomodoro.prototype.ringTimer = function() {
 	console.log('Ring, ring!');
-	this.bell.play();
+	this.bell.play(); 
 };
 
 Pomodoro.prototype.setTimer = function(duration) {
@@ -76,10 +76,10 @@ Pomodoro.prototype.setTimer = function(duration) {
 };
 
 Pomodoro.prototype.pausePlay = function() {
-		this.tick.play();
+	this.tick.play();
 	clearInterval(this.interval);
 	this.isPaused(!this.isPaused());
-	if (!this.isPaused()) this.startTimer(); 
+	if (!this.isPaused()) this.startTimer();
 	else this.remaining = this.timer();
 };
 
@@ -93,7 +93,7 @@ Pomodoro.prototype.adjustDuration = function(seconds) {
 		this.duration(this.timer());
 	}
 	else {
-		this.duration(this.duration() + seconds);
+		this.duration(this.timer() - (this.timer() % 60) + seconds);
 	}
 	this.setTimer(this.duration());
 };
