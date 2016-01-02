@@ -45,24 +45,33 @@ Pomodoro.prototype.clock = function() {
 		this.resetTimer();
 		this.ringTimer();
 	}
-	document.title = this.minutes() + ':' + this.seconds();
+	this.updateTitle();
 };
 
 Pomodoro.prototype.startTimer = function() {
 	// if this is not set then calling the setInterval function with this.clock will set 'this' to global
 	this.tick.play();
-	var me = this;
+	// To adjust time every 100ms
 	this.start = new Date().getTime();
+
+	var me = this;
 	this.interval = setInterval(function() {
 		me.clock();
 	}, 100);
 };
 
+// Updates page title to show minutes:seconds remaining. Side effects function
+Pomodoro.prototype.updateTitle = function() {
+	document.title = (this.isPaused()) ? 'pomodoro' : this.minutes() + ':' + this.seconds();
+};
+
 Pomodoro.prototype.resetTimer = function() {
+	
 	clearInterval(this.interval);
 	this.crank.play();
 	this.isPaused(true);
 	this.setTimer(this.duration());
+	this.updateTitle();
 };
 
 Pomodoro.prototype.ringTimer = function() {
@@ -79,6 +88,7 @@ Pomodoro.prototype.pausePlay = function() {
 	this.tick.play();
 	clearInterval(this.interval);
 	this.isPaused(!this.isPaused());
+	this.updateTitle();
 	if (!this.isPaused()) this.startTimer();
 	else this.remaining = this.timer();
 };
