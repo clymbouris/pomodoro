@@ -29,6 +29,13 @@ function Pomodoro(duration) {
 	// Audio
 	self.mute = function() {
 		self.audio.muted = !self.audio.muted;
+		$soundBtn = $('.sound');
+		if(self.audio.muted) {
+			$soundBtn.attr('src','img/mute.png');
+		}
+		else {
+			$soundBtn.attr('src','img/sound.png');
+		}
 	};
 	self.audio = {
 		muted: false,

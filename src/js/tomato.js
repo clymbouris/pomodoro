@@ -7,4 +7,5 @@ $(document).ready(function(){
 	$tomato.click(function() {
 		p.pausePlay();
 	});
+
 });

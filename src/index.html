@@ -6,6 +6,7 @@
     <meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>pomodoro</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="components/normalize-css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.min.css">
 </head>
@@ -14,8 +15,8 @@
 <div class="container">
 		<div id="signs">
 			<button class="sign" data-bind="click: function () { adjustDuration(60) }">+</button>
-			<img class="sign" data-bind="click: mute" src="img/sound.png">
-			<button class="sign" data-bind="click: resetTimer">r</button>
+			<button class="sign" data-bind="click: mute" ><img class="sound" src="img/sound.png"></button>
+			<button class="sign" data-bind="click: resetTimer">X</button>
 			<button class="sign" data-bind="click: function () { adjustDuration(-60) }">-</button>
 		</div>
 		<button id="tomato" data-bind="style: { border: isPaused() ? 'tomato solid 20px' : '#42D823 solid 20px' }">

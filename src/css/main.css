@@ -1,6 +1,6 @@
 body {
-	background-color: #4F5050;
-	font-family: sans-serif;
+	background-color: #4D4F4F;
+	font-family: 'Roboto', sans-serif;
 }
 
 div {
@@ -62,6 +62,10 @@ button:focus {
 	margin-right: 40px;
 	margin-left: 10px;
 }
+.sound {
+	width: 60px;
+	height: 60px;
+}
 #signs {
 	display: flex;
 	flex-direction: row;
@@ -71,16 +75,17 @@ button:focus {
 }
 .sign {
 	border: 0;
-	margin: 36px;
+	margin-bottom: 36px;
+	margin-left: 28px; 
+	margin-right: 28px; 
 	display: flex;
 	border-radius: 50%;
 	width: 64px;
 	height: 64px;
 	line-height: 64px;
-	font-family: Courier;
 	font-size: 64px;
 	background-color: #4F5050;
-	color: gray;
+	color: #404040;
 	align-items: center;
 	justify-content: center;
 }
