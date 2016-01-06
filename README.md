@@ -13,6 +13,7 @@ Simply visit http://d3moid.github.io/pomodoro/
 - I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.
 - I can reset the clock for my next pomodoro.
 - I can customize the length of each pomodoro.
+- I can mute audio effects.
 
 ##Todo
 - <s>Display live timer in broswer tab title</s>
