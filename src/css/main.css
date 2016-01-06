@@ -1,16 +1,18 @@
 body {
 	background-color: #4D4F4F;
-	font-family: 'Roboto', sans-serif;
+	font-family: sans-serif;
 }
 
 div {
 	display: block;
 }
+
 .container {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 20px;
 }
 
 #tomato {   
@@ -23,19 +25,26 @@ div {
 	background-color: #4F5050;
 	border-radius: 50%;
 	justify-content: center;
-	font-size: 15em;
+	font-size: 16em;
 	color: white;
 	margin-bottom: 20px;
 	align-items: center;
 	border: tomato solid thick;
 }
+
 button:focus {
- outline: none;
+	outline: none;
 }
+
+.minutes {
+	margin-bottom: 500px;
+}
+
 .seconds {
 	display: flex;
 	flex-direction: row;
 }
+
 #seconds {
 	display: flex;
 	align-items: center;
@@ -49,6 +58,7 @@ button:focus {
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
+
 .seconds-label {
 	display: flex;
 	width: 75px;
@@ -62,22 +72,26 @@ button:focus {
 	margin-right: 40px;
 	margin-left: 10px;
 }
+
 .sound {
 	width: 60px;
 	height: 60px;
 }
+
 #signs {
+	margin-top: 25px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	
 }
+
 .sign {
 	border: 0;
 	margin-bottom: 36px;
-	margin-left: 28px; 
-	margin-right: 28px; 
+	margin-left: 22px; 
+	margin-right: 22px; 
 	display: flex;
 	border-radius: 50%;
 	width: 64px;
@@ -89,6 +103,7 @@ button:focus {
 	align-items: center;
 	justify-content: center;
 }
+
 .sign:hover {
 	color: white;
 }
@@ -96,7 +111,6 @@ button:focus {
 #reset:hover {
 	color: white;
 }
-
 
 #isPaused {
 	display: flex;

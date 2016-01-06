@@ -12,9 +12,7 @@ function Pomodoro(duration) {
 
 	// Pause status and view
 	self.isPaused = ko.observable(true);
-	self.pauseView = ko.computed(function() {
-		return (self.isPaused()) ? 'paused' : '';
-	});
+
 
 	// Minutes View
 	self.minutes = ko.computed(function() {
@@ -31,10 +29,12 @@ function Pomodoro(duration) {
 		self.audio.muted = !self.audio.muted;
 		$soundBtn = $('.sound');
 		if(self.audio.muted) {
-			$soundBtn.attr('src','img/mute.png');
+			$soundBtn.removeClass('fa-bell-o');
+			$soundBtn.addClass('fa-bell-slash-o');
 		}
 		else {
-			$soundBtn.attr('src','img/sound.png');
+			$soundBtn.removeClass('fa-bell-slash-o');
+			$soundBtn.addClass('fa-bell-o');
 		}
 	};
 	self.audio = {
@@ -92,9 +92,6 @@ Pomodoro.prototype.playSound = function(name) {
 		        this.audio.tock.play();
 		        break;
 		}
-	}
-	else {
-		console.log(name + '!');
 	}
 };
  
