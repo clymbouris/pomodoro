@@ -7,7 +7,6 @@ Closely related to concepts such as timeboxing and iterative and incremental dev
 Simply visit http://d3moid.github.io/pomodoro/
 
 ##Preview
-![Pomodoro - Paused](http://snag.gy/YSUHr.jpg)
 ![Pomodoro - Running](http://snag.gy/N2EN7.jpg)
 
 ##User Stories
