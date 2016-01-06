@@ -7,7 +7,8 @@ Closely related to concepts such as timeboxing and iterative and incremental dev
 Simply visit http://d3moid.github.io/pomodoro/
 
 ##Preview
-![Pomodoro - Paused](http://snag.gy/x8DTE.jpg) ![Pomodoro - Running](http://snag.gy/3FYlJ.jpg)
+![Pomodoro - Paused](http://snag.gy/YSUHr.jpg)
+![Pomodoro - Running](http://snag.gy/N2EN7.jpg)
 
 ##User Stories
 User Story: I can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.
@@ -17,7 +18,7 @@ User Story: I can reset the clock for my next pomodoro.
 User Story: I can customize the length of each pomodoro.
 
 ##Todo
-- Display live timer in broswer tab title
+- <s>Display live timer in broswer tab title</s>
 
 ##License
 MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
