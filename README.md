@@ -18,5 +18,11 @@ Simply visit http://d3moid.github.io/pomodoro/
 ##Todo
 - <s>Display live timer in broswer tab title</s>
 
+##Room for improvement
+- Better comments throughout the code.
+- Used ViewModel methods to change View elements.
+- CSS writing very bad!
+- Can work on better separating functions to more generic applications.
+
 ##License
 MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
