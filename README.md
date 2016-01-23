@@ -18,11 +18,10 @@ Simply visit http://d3moid.github.io/pomodoro/
 ##Todo
 - <s>Display live timer in broswer tab title</s>
 
-##Room for improvement
-- Better comments throughout the code.
-- Used ViewModel methods to change View elements.
-- CSS writing very bad!
-- Can work on better separating functions to more generic applications.
+##Comments
+@d3moid Could also include a timer for the break, as one is usually told to do a short break after each pomodoro, like 5 mins or so (usually configurable, skippable, and while it is autostarted after pomodoro ends, does not auto-start next pomodoro)
+Otherwise, I like it.
+You somewhat recreated the original pomodoro experience, using the simple old kitchen timer 
 
 ##License
 MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
