@@ -18,7 +18,7 @@ Simply visit http://d3moid.github.io/pomodoro/
 ##Todo
 - <s>Display live timer in broswer tab title</s>
 
-##Comments
+##Comments & Feedback
 @d3moid Could also include a timer for the break, as one is usually told to do a short break after each pomodoro, like 5 mins or so (usually configurable, skippable, and while it is autostarted after pomodoro ends, does not auto-start next pomodoro)
 Otherwise, I like it.
 You somewhat recreated the original pomodoro experience, using the simple old kitchen timer 
